@@ -5,7 +5,7 @@
 
             <div class="row mt-lg-5 ps-5">
                 <div class="col-5 mt-lg-5">
-                    <img class="d-block m-auto w-100" src="https://hotelparkview762579873.files.wordpress.com/2021/05/logo-empresa.jpeg?w=765" alt="">
+                    <img class="d-block m-auto w-100 rounded-circle" src="https://hotelparkview762579873.files.wordpress.com/2021/05/logo-empresa.jpeg?w=765" alt="">
                 </div>
                 <div class="col-7">
                     <h3 class="fw-bolder py-3">Acerca de</h3>
