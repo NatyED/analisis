@@ -1,0 +1,62 @@
+.bg-dark {
+  background-color: #111 !important;
+}
+
+#seccion_inicio1 {
+  background-image: url("https://hotelparkview762579873.files.wordpress.com/2021/05/fondo-de-pantalla.jpg");
+}
+
+#seccion_inicio3 {
+  background-image: url("https://hotelparkview762579873.files.wordpress.com/2021/05/standar.jpg");
+}
+#seccion_inicio5 {
+  background-image: url("https://rockfielddemo.files.wordpress.com/2019/08/ceiling-chairs-clean-2225570-1-1.jpg");
+}
+
+#footer {
+  background-image: url("https://rockfielddemo.files.wordpress.com/2019/08/boston-https-whitlockdesigns-com-interior-design-2225579-1-1.jpg");
+  min-height: 120vh;
+}
+
+#seccion_inicio1,
+#seccion_inicio3,
+#seccion_inicio5,
+#footer {
+  background-color: #000000;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.contenedor_texto {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover{
+background: radial-gradient(circle, rgba(0,0,0,0.7) 0%, rgba(255,255,255,0) 23%);
+
+
+}
+
+.carousel-width{
+  width: 100%;
+}
+
+@media (min-width:  768px) {
+  .carousel-width{
+  width: 60%;
+}
+#footer {
+  min-height: 100vh;
+}
+}
+
+*{
+  font-family: 'Lora', serif;
+}
+
