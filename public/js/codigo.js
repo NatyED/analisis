@@ -7,7 +7,7 @@ $("#contacto").click(function (e) {
         dataType: "html",
         success: function (response) {
             $("#main_index").html(response);
-            Window.scrollTol(0,0)
+            window.scrollTol(0,0)
         }
     });
     
@@ -22,7 +22,7 @@ $(".btn_ver_habitaciones").click(function (e) {
         dataType: "html",
         success: function (response) {
             $("#main_index").html(response)
-            Window.scrollTol(0,0)
+            window.scrollTol(0,0)
         }
     });
     
@@ -37,7 +37,7 @@ $(".btn_ver_inicio").click(function (e) {
         dataType: "html",
         success: function (response) {
             $("#main_index").html(response)
-            Window.scrollTol(0,0)
+            window.scrollTol(0,0)
         }
     });
     
@@ -52,7 +52,7 @@ $(".btn_ver_info").click(function (e) {
         dataType: "html",
         success: function (response) {
             $("#main_index").html(response)
-            Window.scrollTol(0,0)
+            window.scrollTol(0,0)
         }
     });
 });
