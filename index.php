@@ -1,3 +1,13 @@
+<?php
+
+if (session_status()!=PHP_SESSION_ACTIVE){
+    session_start();
+}
+    //$_SESSION["idUsuario"]=1;
+    //session_unset();
+    //session_destroy();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,10 +46,20 @@
                                 href="">Habitaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a id="contacto" class="nav-link btn-link-contacto fw-bold text-light" href="">Contacto</a>
+                        <a id="perfil" class="nav-link btn-link-perfil fw-bold text-light" href="">
+                            <?php 
+                            if(isset($_SESSION ["idUsuario"])){
+                               echo "Perfil";
+                            }else{
+                                echo "Iniciar Sesión";
+                            }
+                            
+                            ?>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-link-informacion fw-bold text-light btn_ver_info" href="">Acerca de</a>
+                            <a class="nav-link btn-link-informacion fw-bold text-light btn_ver_info" href="">Acerca
+                                de</a>
                         </li>
                     </ul>
                 </div>

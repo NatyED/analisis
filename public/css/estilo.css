@@ -3,18 +3,18 @@
 }
 
 #seccion_inicio1 {
-	background-image: url("https://hotelparkview762579873.files.wordpress.com/2021/05/fondo-de-pantalla.jpg");
+	background-image: url("../imagenes/seccion_inicio1.webp");
 }
 
 #seccion_inicio3 {
-	background-image: url("https://hotelparkview762579873.files.wordpress.com/2021/05/standar.jpg");
+	background-image: url("../imagenes/seccion_inicio3.webp");
 }
 #seccion_inicio5 {
-	background-image: url("https://rockfielddemo.files.wordpress.com/2019/08/ceiling-chairs-clean-2225570-1-1.jpg");
+	background-image: url("../imagenes/seccion_inicio5.webp");
 }
 
 #footer {
-	background-image: url("https://rockfielddemo.files.wordpress.com/2019/08/boston-https-whitlockdesigns-com-interior-design-2225579-1-1.jpg");
+	background-image: url("../imagenes/footer.webp");
 	min-height: 120vh;
 }
 

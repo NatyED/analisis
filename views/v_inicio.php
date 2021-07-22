@@ -69,16 +69,17 @@
                 </div>
             </div>
             <div class="col-12">
-        <div class="d-flex justify-content-center align-items-center">
-            <button id="btn_ver_habitaciones" type="submit" class="btn bg-dark text-white btn_ver_habitaciones">Ver las
-                habitaciones</button>
-        </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button id="btn_ver_habitaciones" type="button"
+                        class="btn bg-dark text-white btn_ver_habitaciones">Ver las
+                        habitaciones</button>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="seccion_inicio5" class="vh-100 position-relative">
+<!--<section id="seccion_inicio5" class="vh-100 position-relative">
     <div class="contenedor_texto position-absolute ">
         <h1 class="text-white ">Reserva tus actividades</h1>
     </div>
@@ -86,50 +87,22 @@
 
 <section id="seccion_inicio6" class="min-vh-100 container d-flex justify-content-center align-items-center">
 
-        <form id="FormularioContacto" class="row">
-           
-                <div class="col-12 my-5">
-                    <p>Para reservar un salón para actividades o negocios, llámanos al 123 444 567 o usa el <br />
-                        siguiente
-                        formulario.</p>
-                </div>
-                <div class="col-12 my-2">
-                    <label for="nombre_reserva" class="form-label fw-bold ">Nombre</label>
-                    <input type="text" class="form-control border-2" id="nombre_contacto" name="nombre_contacto" placeholder="" required>
-                </div>
-                <div class="col-12 my-2">
-                    <label for="correo_reserva" class="form-label fw-bold">Correo Electrónico</label>
-                    <input type="email" class="form-control border-2" id="correo_contacto" name="correo_contacto" placeholder="" required>
-                </div>
-                <div class="col-12 my-2">
-                    <label for="telefono_reserva" class="form-label fw-bold">Telefono</label>
-                    <input type="number" class="form-control border-2" id="telefono_reserva" name="telefono_reserva" placeholder="" required>
-                </div>
-                <div class="col-12 my-2">
-                    <label for="fecha_reserva" class="form-label fw-bold">Fecha</label>
-                    <input type="date" class="form-control border-2" id="fecha_reserva" name="fecha_reserva" placeholder="" required>
-                </div>
-                <div class="col-12 my-2">
-                    <label for="hora_inicio_reserva" class="form-label fw-bold">Hora de inicio</label>
-                    <input type="time" class="form-control border-2" id="hora_inicio_reserva" name="hora_inicio_reserva" placeholder="" required>
-                </div>
-                <div class="col-12 my-2">
-                    <label for="espacio_reserva" class="form-label fw-bold">Espacio</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">10 personas</option>
-                        <option value="2">30 personas</option>
-                        <option value="3">Mas de 30 personas</option>
-                    </select>
-                </div>
-                <div class="col-12 my-2">
-                    <label for="requerimientos_reserva" class="form-label fw-bold">Requerimeintos especiales</label>
-                    <textarea name="requerimientos_reserva" id="requerimientos_reserva" class="form-control  border-2" cols="30" rows="10" required></textarea>
-                </div>
-                <div class="col-12 my-2">
-                    <button type="submit" class="btn btn-dark rounded-0 border">Enviar</button>
-                </div>
-          
-        </form>
-    
-</section>
+    <div class=" mt-5 mt-lg-0">
+        <div class="row ">
+            <div class="col-12 text-center my-3">
+                <h3 class="fw-bolder my-3">Contacto</h3>
+                <p>
+                    Hablemos 👋. No dudes en ponerte en contacto con nosotros mediante la información de <br />
+                    contacto a
+                    continuación, o envíanos un mensaje mediante el formulario.
+                </p>
+            </div>
+            <div class="col-12 text-center my-3">
+                <h3 class="fw-bolder">Ponte en contacto</h3>
+                <br />
+                <p>Rockford Hills <br>Playa Parkview <br>info@parkview.com <br>123 444 567</p>
+            </div>
+        </div>
+    </div>
+
+</section>-->
