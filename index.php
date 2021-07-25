@@ -17,8 +17,7 @@ if (session_status()!=PHP_SESSION_ACTIVE){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Hotel Parkview</title>
@@ -30,7 +29,7 @@ if (session_status()!=PHP_SESSION_ACTIVE){
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold btn_ver_inicio" href="">Hotel Parkview</a>
+                <a class="navbar-brand fw-bold btnVerInicio" href="">Hotel Parkview</a>
                 <button class="navbar-toggler" data-bs-target="#my-nav" data-bs-toggle="collapse" aria-controls="my-nav"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -38,27 +37,28 @@ if (session_status()!=PHP_SESSION_ACTIVE){
                 <div id="my-nav" class="collapse navbar-collapse ">
                     <ul class="navbar-nav ms-auto ">
                         <li class="nav-item active">
-                            <a class="nav-link btn-link-inicio fw-bold text-light btn_ver_inicio" href="">Página de
+                            <a class="nav-link btn-link-inicio fw-bold text-light btnVerInicio" href="">Página de
                                 inicio </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-link-habitaciones fw-bold text-light btn_ver_habitaciones"
+                            <a class="nav-link btn-link-habitaciones fw-bold text-light btnVerHabitaciones"
                                 href="">Habitaciones</a>
                         </li>
                         <li class="nav-item">
-                        <a id="perfil" class="nav-link btn-link-perfil fw-bold text-light" href="">
+                        <a id="perfil" class="nav-link btnLinkPerfil fw-bold text-light" href="">
                             <?php 
                             if(isset($_SESSION ["idUsuario"])){
                                echo "Perfil";
                             }else{
                                 echo "Iniciar Sesión";
+                                
                             }
                             
                             ?>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-link-informacion fw-bold text-light btn_ver_info" href="">Acerca
+                            <a class="nav-link btn-link-informacion fw-bold text-light btnVerInfo" href="">Acerca
                                 de</a>
                         </li>
                     </ul>
@@ -71,7 +71,7 @@ if (session_status()!=PHP_SESSION_ACTIVE){
         <?php 
     
     
-       require_once "./views/v_inicio.php";
+       require_once "./views/vInicio.php";
     ?>
     </main>
 
