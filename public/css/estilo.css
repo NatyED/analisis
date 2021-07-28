@@ -1,7 +1,9 @@
 .bg-dark {
 	background-color: #111 !important;
 }
-
+.bg-danger{
+	background-color:#720202 !important;
+}
 #seccion_inicio1 {
 	background-image: url("../imagenes/seccion_inicio1.webp");
 }

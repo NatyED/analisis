@@ -6,13 +6,13 @@
         <div class="col-12 ">
             <div class="mb-3">
                 <label for="" class="form-label">Correo Electrónico:</label>
-                <input class="form-control" name="correo_sesion" type="email" placeholder="" aria-label="">
+                <input class="form-control" name="correoSesion" type="email" placeholder="" aria-label="">
             </div>
         </div>
         <div class="col-12">
             <div class="mb-3">
                 <label for="" class="form-label">Contraseña:</label>
-                <input class="form-control" name="contrasena_sesion" type="password" placeholder="" aria-label="">
+                <input class="form-control" name="contrasenaSesion" type="password" placeholder="" aria-label="">
             </div>
         </div>
         <div class="col-12 mt-5">
@@ -22,5 +22,5 @@
             </div>
         </div>
 
-</form>
+    </form>
 </section>

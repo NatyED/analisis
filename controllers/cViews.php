@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class cViews 
 {
@@ -24,6 +24,18 @@ class cViews
     }
     static function vInicioUsuario(){
         require_once "../views/vInicioUsuario.php";
+    }
+    static function vCrearReservacion(){
+        require_once "../views/vCrearReservacion.php";
+    }
+    static function vPerfil(){
+        require_once "../views/vPerfil.php";
+    }
+    static function vModificar(){
+        require_once "../views/vModificar.php";
+    }
+    static function vEliminar(){
+        require_once "../views/vEliminar.php";
     }
 
 }
@@ -51,6 +63,27 @@ if (isset($_POST["action"])){
             break;
         case 'viewInicioSesion':
             cViews::vInicioUsuario();
+            break;
+        case 'viewReserva':
+            cViews::vCrearReservacion();
+            break;
+        case 'viewCrearReserva':
+            cViews::vInicioUsuario();
+            break;
+        case 'viewVerPerfil':
+            cViews::vPerfil();
+            break;
+        case 'viewVerReservaciones':
+            cViews::vInicioUsuario();
+            break;
+        case 'viewEditarPerfil':
+            cViews::vInicioUsuario();
+            break;
+        case 'viewVentanaModificar':
+            cViews::vModificar();
+            break;
+        case 'viewVentanaEliminar':
+            cViews::vEliminar();
             break;
         default:
             # code...
