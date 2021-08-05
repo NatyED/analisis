@@ -6,13 +6,13 @@
         <div class="col-12 ">
             <div class="mb-3">
                 <label for="" class="form-label">Correo Electrónico:</label>
-                <input class="form-control" name="correoSesion" type="email" placeholder="" aria-label="">
+                <input class="form-control" name="correoSesion" id="correoSesion" type="email" placeholder="" aria-label="">
             </div>
         </div>
         <div class="col-12">
             <div class="mb-3">
                 <label for="" class="form-label">Contraseña:</label>
-                <input class="form-control" name="contrasenaSesion" type="password" placeholder="" aria-label="">
+                <input class="form-control" name="contrasenaSesion" id="contrasenaSesion" type="password" placeholder="" aria-label="">
             </div>
         </div>
         <div class="col-12 mt-5">
@@ -21,6 +21,14 @@
                 <button type="button" class="btn bg-dark text-light btnRegistrar">Registrarse </button>
             </div>
         </div>
-
     </form>
 </section>
+
+<div id='toastError' class="toast position-absolute align-items-center text-white bg-dark border-0 top-50 start-50 translate-middle" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+        <div id='toastErrorMsg' class="toast-body">
+
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+</div>

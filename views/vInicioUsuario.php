@@ -26,7 +26,7 @@
                         <td>12-03-2021</td>
                         <td>20-03-2021</td>
                         <td colspan="4">
-                            <div >
+                            <div>
                                 <button idReservacion="1" type="button" class="btn bg-dark mx-2 text-light btnVentanaModificar ">Modificar </button>
                                 <button type="button" class="btn bg-dark mx-2 text-light btnVentanaEliminar ">Eliminar </button>
                             </div>

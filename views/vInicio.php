@@ -70,39 +70,10 @@
             </div>
             <div class="col-12">
                 <div class="d-flex justify-content-center align-items-center">
-                    <button id="btn_ver_habitaciones" type="button"
-                        class="btn bg-dark text-white btn_ver_habitaciones">Ver las
+                    <button id="btn_ver_habitaciones" type="button" class="btn bg-dark text-white btnVerHabitaciones">Ver las
                         habitaciones</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<!--<section id="seccion_inicio5" class="vh-100 position-relative">
-    <div class="contenedor_texto position-absolute ">
-        <h1 class="text-white ">Reserva tus actividades</h1>
-    </div>
-</section>
-
-<section id="seccion_inicio6" class="min-vh-100 container d-flex justify-content-center align-items-center">
-
-    <div class=" mt-5 mt-lg-0">
-        <div class="row ">
-            <div class="col-12 text-center my-3">
-                <h3 class="fw-bolder my-3">Contacto</h3>
-                <p>
-                    Hablemos 👋. No dudes en ponerte en contacto con nosotros mediante la información de <br />
-                    contacto a
-                    continuación, o envíanos un mensaje mediante el formulario.
-                </p>
-            </div>
-            <div class="col-12 text-center my-3">
-                <h3 class="fw-bolder">Ponte en contacto</h3>
-                <br />
-                <p>Rockford Hills <br>Playa Parkview <br>info@parkview.com <br>123 444 567</p>
-            </div>
-        </div>
-    </div>
-
-</section>-->
