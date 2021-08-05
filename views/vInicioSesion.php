@@ -26,8 +26,9 @@
 
 <div id='toastError' class="toast position-absolute align-items-center text-white bg-dark border-0 top-50 start-50 translate-middle" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
-        <div id='toastErrorMsg' class="toast-body">
-
+        <div class="toast-body">
+            <label for=""  id='toastErrorMsg'></label>
+            <a href="" id="toastRecuperar" class="text-white d-none"  >Recuperar contraseña</a>
         </div>
         <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
