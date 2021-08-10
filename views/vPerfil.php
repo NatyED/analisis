@@ -1,5 +1,5 @@
-<section class="min-vh-100 d-flex justify-content-center align-items-center">
-    <form class="d-block row  w-50" id="FormularioPerfil">
+<section class="container min-vh-100 d-flex justify-content-center align-items-center my-5">
+    <form class=" row" id="FormularioPerfil">
         <div class="col-12 my-5 text-center">
             <h1>Perfil</h1>
         </div>
@@ -24,25 +24,25 @@
         <div class="col-12 ">
             <div class="mb-3">
                 <label for="" class="form-label">Correo Electrónico:</label>
-                <input class="form-control" name="correoPerfil" type="email" placeholder="" aria-label="" value='<?= $_SESSION["correo"] ?>'>
+                <input class="form-control" id="correoPerfil" type="email" placeholder="" aria-label="" value='<?= $_SESSION["correo"] ?>'>
             </div>
         </div>
         <div class="col-12">
             <div class="mb-3">
                 <label for="" class="form-label">Telefono:</label>
-                <input class="form-control" name="telefonoPerfil" type="tel" placeholder="" aria-label="" value='<?= $_SESSION["telefono"] ?>'>
+                <input class="form-control" id="telefonoPerfil" type="tel" placeholder="" aria-label="" value='<?= $_SESSION["telefono"] ?>'>
             </div>
         </div>
         <div class="col-12 ">
             <div class="mb-3">
                 <label for="" class="form-label">Nacionalidad:</label>
-                <input class="form-control" name="nacionalidadPerfil" type="text" placeholder="" aria-label="" value='<?= $_SESSION["nacionalidad"] ?>'>
+                <input class="form-control" id="nacionalidadPerfil" type="text" placeholder="" aria-label="" value='<?= $_SESSION["nacionalidad"] ?>'>
             </div>
         </div>
         <div class="col-12 ">
             <div class="mb-3">
                 <label for="" class="form-label">Genero:</label>
-                <select name="generoPerfil" class="form-select">
+                <select id="generoPerfil" class="form-select">
                     <option value="Hombre" <?php if ($_SESSION["genero"] == 'Hombre') {
                                                 echo 'selected';
                                             }  ?>>Hombre</option>
@@ -55,10 +55,9 @@
                 </select>
             </div>
         </div>
-        <div class="col-12 mt-5 d-flex justify-content-evenly my-5">
+        <div class="col-12 d-flex justify-content-evenly mt-5">
             <button type="button" class="btn bg-dark text-light btnEditarPerfil ">Editar Perfil </button>
-            <button type="button" class="btn bg-dark text-light btnReservaciones">Reservaciones </button>
-
+            <a href="" class="btn bg-dark text-light btnReservaciones">Reservaciones </a>
     </form>
 </section>
-<script src=""></script>
+<?php require_once 'vToastError.php' ?>

@@ -79,12 +79,12 @@ public static function InsertarEmpleado ($idTipoUsuario,$identificacion,$nombre,
 
     }
 }
-public static function ActualizarUsuarios ($idUsuario,$idTipoUsuario,$nombre,$apellidos,$correo,$telefono,$nacionalidad,$genero,$puesto,$salario)
+public static function ActualizarEmpleado ($idUsuario,$idTipoUsuario,$nombre,$apellidos,$correo,$telefono,$nacionalidad,$genero,$puesto,$salario)
 {
     try {
         $conexion = mConexion::getConnect();
         $conexion -> beginTransaction ();
-        $query = $conexion->prepare("CALL SP_ActualizarUsuarios(:idUsuario,:idTipoUsuario,:nombre,:apellidos,:correo,:telefono,:nacionalidad,:genero,:puesto,:salario)");
+        $query = $conexion->prepare("CALL SP_ActualizarEmpleado(:idUsuario,:idTipoUsuario,:nombre,:apellidos,:correo,:telefono,:nacionalidad,:genero,:puesto,:salario)");
         $query->bindValue(":idTipoUsuario",$idTipoUsuario);
         $query->bindValue(":nombre",$nombre);
         $query->bindValue(":apellidos",$apellidos);
@@ -94,6 +94,31 @@ public static function ActualizarUsuarios ($idUsuario,$idTipoUsuario,$nombre,$ap
         $query->bindValue(":genero",$genero);
         $query->bindValue(":puesto",$puesto);
         $query->bindValue(":salario",$salario);
+        $query->bindValue(":idUsuario",$idUsuario);
+        $query-> execute ();
+        $numero = $query -> rowCount();
+        $conexion -> commit ();  
+        return $numero;
+
+    } catch (PDOException $e) {
+        $conexion->rollBack();
+        throw $e;
+        return "Se ha presentado un error " . $e->getMessage();
+
+    }
+}
+public static function ActualizarCliente ($idUsuario,$nombre,$apellidos,$correo,$telefono,$nacionalidad,$genero)
+{
+    try {
+        $conexion = mConexion::getConnect();
+        $conexion -> beginTransaction ();
+        $query = $conexion->prepare("CALL SP_ActualizarCliente(:idUsuario,:nombre,:apellidos,:correo,:telefono,:nacionalidad,:genero)");
+        $query->bindValue(":nombre",$nombre);
+        $query->bindValue(":apellidos",$apellidos);
+        $query->bindValue(":correo",$correo);
+        $query->bindValue(":telefono",$telefono);
+        $query->bindValue(":nacionalidad",$nacionalidad);
+        $query->bindValue(":genero",$genero);
         $query->bindValue(":idUsuario",$idUsuario);
         $query-> execute ();
         $numero = $query -> rowCount();
@@ -216,11 +241,9 @@ public static function InsertarCliente ($idTipoUsuario,$identificacion,$nombre,$
         $numero = $query -> rowCount(); 
         $conexion -> commit ();  
         return $numero; 
-
-
     } catch (PDOException $e) {
         $conexion->rollBack();
-        throw $e;
+        //throw $e;
         return "Se ha presentado un error " . $e->getMessage();
 
     }

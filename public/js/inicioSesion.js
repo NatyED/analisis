@@ -86,7 +86,6 @@ $(".btnLinkIniciarSesion").click(function (e) {
 								},
 								dataType: "json",
 								success: function (response) {
-									console.log(response);
 									if (response["registro"] === true) {
 										$.ajax({
 											type: "POST",
@@ -94,20 +93,43 @@ $(".btnLinkIniciarSesion").click(function (e) {
 											data: {action:'viewRecuperarContrasena'},
 											dataType: "html",
 											success: function (response) {
-												/**
-												 * 
-												 * FALTA
-												 * POR
-												 * HACER
-												 * 
-												 * 
-												 * 
-												 */
+												$('#main_index').html(response);
+												$("#FormularioRecuperarContrasena").on("submit", function (e) {
+													e.preventDefault();
+													if ($("#contrasenaNueva").val() == $("#verificarContrasenaNueva").val()) {
+														$.ajax({
+															type: "POST",
+															url: "./",
+															data: {
+																action: "RecuperarContrasena",
+																datos: {
+																	perfilIdentificacion: $(
+																		"#perfilIdentificacion"
+																	).val(),
+																	correoPerfil: $("#correoPerfil").val(),
+																	telefonoPerfil:
+																		$("#telefonoPerfil").val(),
+																	contrasenaNueva: $("#contrasenaNueva").val()
+																},
+															},
+															dataType: "json",
+															success: function (response) {
+																$("#toastErrorMsg").html(response["msg"]);
+																$("#liveToast").toast("show");
+																setTimeout(() => { location.reload();},3000)
+															},
+														});
+													} else {
+														$("#toastErrorMsg").html("Las contraseña no coincide, verifiquelas e intente nuevamente.");
+														$("#liveToast").toast("show");
+														
+													}
+												});
 											}
 										});
 									} else if (response["registro"] === false) {
 										$("#toastErrorMsg").html(response["msg"]);
-										$("#toastError").toast("show");
+										$("#liveToast").toast("show");
 									}
 								},
 							});
@@ -116,7 +138,7 @@ $(".btnLinkIniciarSesion").click(function (e) {
 				});
 			});
 
-			$("#FormularioSesion").on("submit", function (e) {
+			$(".btnInicioSesion").on("click", function (e) {
 				e.preventDefault();
 				$.ajax({
 					type: "POST",
@@ -130,13 +152,58 @@ $(".btnLinkIniciarSesion").click(function (e) {
 					},
 					dataType: "json",
 					success: function (response) {
-						if (response["access"] === true) {
+						if (response["access"] == true) {
 							location.reload();
-						} else if (response["access"] === false) {
-							$("#toastErrorMsg").html(response["msg"])
-							$("#toastError").toast("show");
+						} else if (response["access"] == false) {
+							if (response["contrasena"] == true) {
+								$("#toastRecuperar").removeClass('d-none');
+							} else if (response["contrasena"] == false) {
+								$("#toastRecuperar").addClass("d-none");
+							}
+							$("#toastErrorMsg").html(response["msg"]);
+							$("#liveToast").toast("show");
 						}
 					},
+				});
+			});
+			$("#toastRecuperar").on('click', function (e) {
+				e.preventDefault();
+				$.ajax({
+					type: "POST",
+					url: "./",
+					data: {action:'viewRecuperarContrasena'},
+					dataType: "html",
+					success: function (response) {
+						$('#main_index').html(response);
+						$('#FormularioRecuperarContrasena').on('submit', function (e) {
+							e.preventDefault()
+							if ($('#contrasenaNueva').val() == $('#verificarContrasenaNueva').val()) {
+								$.ajax({
+									type: "POST",
+									url: "./",
+									data: {
+										action: 'RecuperarContrasena',
+										datos: {
+											perfilIdentificacion: $(
+												"#perfilIdentificacion"
+											).val(),
+											correoPerfil: $("#correoPerfil").val(),
+											telefonoPerfil: $("#telefonoPerfil").val(),
+											contrasenaNueva: $("#contrasenaNueva").val()
+										},
+									},
+									dataType: "json",
+									success: function (response) {
+										$("#toastErrorMsg").html(response["msg"]);
+										$("#liveToast").toast("show");
+										setTimeout(() => {
+											location.reload();
+										}, 3000)
+									}
+								});
+							}
+						});
+					}
 				});
 			});
 		},
