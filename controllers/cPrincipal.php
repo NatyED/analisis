@@ -96,13 +96,13 @@ if (isset($_POST['action'])) {
             break;
         case 'CrearReservacion':
             require_once 'cReservaciones.php';
-            $response = cReservaciones::CrearReservacion($_SESSION['idUsuario'], $_POST["datos"]["idHabitacion"], $_POST["datos"]["fechaEntrada"], $_POST["datos"]["fechaSalida"]);
+            $response = cReservaciones::CrearReservacion($_SESSION['idUsuario'], $_POST["datos"]["idHabitacion"], $_POST["datos"]["fechaActual"],$_POST["datos"]["fechaEntrada"], $_POST["datos"]["fechaSalida"]);
             echo json_encode($response);
 
             break;
         case 'ModificarReservacion':
             require_once 'cReservaciones.php';
-            $response = cReservaciones::ModificarReservacion($_SESSION['reservacion']["idReservacion"], $_SESSION['reservacion']["idCliente"], $_POST['datos']['idHabitacion'], $_SESSION['reservacion']["idCliente"], $_POST['datos']['fechaEntrada'], $_POST['datos']['fechaSalida']);
+            $response = cReservaciones::ModificarReservacion($_SESSION['reservacion']["idReservacion"], $_SESSION['reservacion']["idCliente"], $_POST['datos']['idHabitacion'], $_SESSION['reservacion']["idCliente"], $_POST['datos']['fechaActual'] ,$_POST['datos']['fechaEntrada'], $_POST['datos']['fechaSalida']);
             echo json_encode($response);
             break;
         case 'EliminarReservacion':

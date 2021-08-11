@@ -17,16 +17,17 @@ public static function VerReservacion($idUsuario,$idReservacion)
         return "Se ha presentado un error " . $e->getMessage();
     }
 }
-public static function ActualizarReservaciones($idReservacion,$idCliente,$idHabitacion,$idEmpleado,$fechaEntrada,$fechaSalida)
+public static function ActualizarReservaciones($idReservacion,$idCliente,$idHabitacion,$idEmpleado,$fechaActual,$fechaEntrada,$fechaSalida)
 {
     try {
         $conexion=mConexion::getConnect();
         $conexion -> beginTransaction ();
-        $query=$conexion->prepare("CALL SP_ActualizarReservaciones(:idReservacion,:idCliente,:idHabitacion,:idEmpleado,:fechaEntrada,:fechaSalida)");
+        $query=$conexion->prepare("CALL SP_ActualizarReservaciones(:idReservacion,:idCliente,:idHabitacion,:idEmpleado,:fechaActual,:fechaEntrada,:fechaSalida)");
         $query->bindValue ("idReservacion",$idReservacion);
         $query->bindValue ("idCliente",$idCliente);
         $query->bindValue ("idHabitacion",$idHabitacion);
         $query->bindValue ("idEmpleado",$idEmpleado);
+        $query->bindValue ("fechaActual",$fechaActual);
         $query->bindValue ("fechaEntrada",$fechaEntrada);
         $query->bindValue ("fechaSalida",$fechaSalida);
         $query->execute ();
@@ -59,15 +60,16 @@ public static function EliminarReservaciones($idUsuario,$idReservacion)
         return "Se ha presentado un error " . $e->getMessage();
     }
 }
-public static function InsertarReservaciones($idCliente,$idHabitacion,$idEmpleado,$fechaEntrada,$fechaSalida)
+public static function InsertarReservaciones($idCliente,$idHabitacion,$idEmpleado,$fechaActual,$fechaEntrada,$fechaSalida)
 {
     try {
         $conexion=mConexion::getConnect();
         $conexion -> beginTransaction ();
-        $query=$conexion->prepare("CALL SP_InsertarReservaciones(:idCliente,:idHabitacion,:idEmpleado,:fechaEntrada,:fechaSalida)");
+        $query=$conexion->prepare("CALL SP_InsertarReservaciones(:idCliente,:idHabitacion,:idEmpleado,:fechaActual,:fechaEntrada,:fechaSalida)");
         $query->bindValue ("idCliente",$idCliente);
         $query->bindValue ("idHabitacion",$idHabitacion);
         $query->bindValue ("idEmpleado",$idEmpleado);
+        $query->bindValue ("fechaActual",$fechaActual);
         $query->bindValue ("fechaEntrada",$fechaEntrada);
         $query->bindValue ("fechaSalida",$fechaSalida);
         $query->execute ();

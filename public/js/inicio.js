@@ -144,6 +144,7 @@ $(".btnVentanaModificar").on("click", function (e) {
 								data: {
 									action: "ModificarReservacion",
 									datos: {
+										fechaActual: moment().format('YYYY-MM-DD'),
 										fechaEntrada: $("#fechaEntrada").val(),
 										fechaSalida: $("#fechaSalida").val(),
 										idHabitacion: $("#idHabitacion").val()
@@ -281,6 +282,7 @@ $(".btnVentanaCrearReservacion ").on("click", function () {
 						action: 'CrearReservacion',
 						datos: {
 							idHabitacion: $("#idHabitacion").val(),
+							fechaActual: moment().format('YYYY-MM-DD'),
 							fechaEntrada: $("#fechaEntrada").val(),
 							fechaSalida: $("#fechaSalida").val()
 						},

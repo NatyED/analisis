@@ -36,7 +36,7 @@
                     <?php
                     foreach ($tiposHabitaciones as $tipoHabitacion) { ?>
                         <option value="<?= $tipoHabitacion->idTipoHabitacion ?>">
-                            <?= $tipoHabitacion->nombre . ' - $' . $tipoHabitacion->precio ?></option>
+                            <?= $tipoHabitacion->nombre . ' - $' . $tipoHabitacion->precio.' por noche' ?></option>
                     <?php
                     } ?>
 

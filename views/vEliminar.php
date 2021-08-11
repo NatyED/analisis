@@ -37,9 +37,9 @@
                             <?php
                             foreach ($tiposHabitaciones as $tipoHabitacion) {
                                 if ($tipoHabitacion->idTipoHabitacion == $_SESSION['reservacion']['idTipoHabitacion']) { ?>
-                                    <option value="<?= $tipoHabitacion->idTipoHabitacion ?>" selected><?= $tipoHabitacion->nombre . ' - $' . $tipoHabitacion->precio ?></option>
+                                    <option value="<?= $tipoHabitacion->idTipoHabitacion ?>" selected><?= $tipoHabitacion->nombre . ' - $' . $tipoHabitacion-> precio . ' por noche'  ?></option>
                                 <?php } else { ?>
-                                    <option value="<?= $tipoHabitacion->idTipoHabitacion ?>"><?= $tipoHabitacion->nombre . ' - $' . $tipoHabitacion->precio ?></option>
+                                    <option value="<?= $tipoHabitacion->idTipoHabitacion ?>"><?= $tipoHabitacion->nombre . ' - $' . $tipoHabitacion-> precio . ' por noche'  ?></option>
                             <?php }
                             } ?>
                         </select>

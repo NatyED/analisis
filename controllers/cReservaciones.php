@@ -24,12 +24,12 @@ class cReservaciones{
         }
         return $response;
     }
-    static function CrearReservacion($idUsuario,$idHabitacion,$fechaEntrada,$fechaSalida)
+    static function CrearReservacion($idUsuario,$idHabitacion,$fechaActual,$fechaEntrada,$fechaSalida)
     {
         require_once './models/mConexion.php';
         require_once './models/mReservaciones.php';
         if(strtotime($fechaEntrada)!=false && strtotime($fechaSalida)!= false){
-            $reservacion = mReservaciones::InsertarReservaciones($idUsuario, $idHabitacion,$idUsuario, $fechaEntrada, $fechaSalida);  
+            $reservacion = mReservaciones::InsertarReservaciones($idUsuario, $idHabitacion,$idUsuario,$fechaActual, $fechaEntrada, $fechaSalida);  
         }else{
             $reservacion=2;
             $response["reservacion"] = false;
@@ -44,12 +44,12 @@ class cReservaciones{
         }
         return $response;
     }
-    static function ModificarReservacion($idReservacion, $idCliente, $idHabitacion, $idEmpleado, $fechaEntrada, $fechaSalida)
+    static function ModificarReservacion($idReservacion, $idCliente, $idHabitacion, $idEmpleado, $fechaActual,$fechaEntrada, $fechaSalida)
     {
         require_once './models/mConexion.php';
         require_once './models/mReservaciones.php';
 
-        $reservacion = mReservaciones::ActualizarReservaciones($idReservacion, $idCliente, $idHabitacion, $idEmpleado, $fechaEntrada, $fechaSalida);
+        $reservacion = mReservaciones::ActualizarReservaciones($idReservacion, $idCliente, $idHabitacion, $idEmpleado,$fechaActual, $fechaEntrada, $fechaSalida);
         //var_dump($reservacion);
         if($reservacion == 3 || $reservacion == 2){
             $_SESSION['reservacion'] = null;
