@@ -43,13 +43,13 @@ class cUsuarios
         }
         return $response;
     }
-    public static function ActualizarCliente($idUsuario, $nombre, $apellidos, $correo, $telefono, $nacionalidad, $genero)
+    public static function ActualizarCliente($idUsuario,$identificacion, $nombre, $apellidos, $correo, $telefono, $nacionalidad, $genero)
     {
         require_once './models/mConexion.php';
         require_once './models/mUsuarios.php';
-        $comprobacion = mUsuarios::ActualizarCliente($idUsuario, $nombre, $apellidos, $correo, $telefono, $nacionalidad, $genero);
+        $comprobacion = mUsuarios::ActualizarCliente($idUsuario, $identificacion,$nombre, $apellidos, $correo, $telefono, $nacionalidad, $genero);
         if ($comprobacion == 1) {
-            $_SESSION= (array) mUsuarios::VerUsuario($_SESSION["idUsuario"]);
+            $_SESSION = (array) mUsuarios::VerUsuario($_SESSION["idUsuario"]);
             $response["registro"] = true;
             $response["msg"] = "El usuario a sido actualizado con exito.";
         } else {

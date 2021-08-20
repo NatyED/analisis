@@ -58,7 +58,7 @@ $(".btnVerPerfil").on("click", function (e) {
 		dataType: "html",
 		success: function (response) {
 			$("#main_index").html(response);
-			$(".btnEditarPerfil ").on("click", function () {
+			$(".btnEditarPerfil").on("click", function () {
 				$.ajax({
 					type: "POST",
 					url: "./",

@@ -107,19 +107,20 @@ public static function ActualizarEmpleado ($idUsuario,$idTipoUsuario,$nombre,$ap
 
     }
 }
-public static function ActualizarCliente ($idUsuario,$nombre,$apellidos,$correo,$telefono,$nacionalidad,$genero)
+public static function ActualizarCliente ($idUsuario,$identificacion,$nombre,$apellidos,$correo,$telefono,$nacionalidad,$genero)
 {
     try {
         $conexion = mConexion::getConnect();
         $conexion -> beginTransaction ();
-        $query = $conexion->prepare("CALL SP_ActualizarCliente(:idUsuario,:nombre,:apellidos,:correo,:telefono,:nacionalidad,:genero)");
+        $query = $conexion->prepare("CALL SP_ActualizarCliente(:idUsuario,:identificacion,:nombre,:apellidos,:correo,:telefono,:nacionalidad,:genero)");
+        $query->bindValue(":idUsuario",$idUsuario);
+        $query->bindValue(":identificacion",$identificacion);
         $query->bindValue(":nombre",$nombre);
         $query->bindValue(":apellidos",$apellidos);
         $query->bindValue(":correo",$correo);
         $query->bindValue(":telefono",$telefono);
         $query->bindValue(":nacionalidad",$nacionalidad);
         $query->bindValue(":genero",$genero);
-        $query->bindValue(":idUsuario",$idUsuario);
         $query-> execute ();
         $numero = $query -> rowCount();
         $conexion -> commit ();  

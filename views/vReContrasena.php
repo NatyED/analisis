@@ -72,6 +72,7 @@
                 <button type="submit" class="btn bg-dark text-light btnRecuperarContrasena ">Recuperar Contraseña</button>
 
             <?php } ?>
+        </div>
 
     </form>
 </section>

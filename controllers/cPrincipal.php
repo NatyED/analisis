@@ -71,7 +71,7 @@ if (isset($_POST['action'])) {
 
         case 'EditarUsuario':
             require_once 'cUsuarios.php';
-            $response = cUsuarios::ActualizarCliente($_SESSION["idUsuario"], $_SESSION["nombre"], $_SESSION["apellidos"], $_POST["datos"]["correoPerfil"], $_POST["datos"]["telefonoPerfil"], $_POST["datos"]["nacionalidadPerfil"], $_POST["datos"]["generoPerfil"]);
+            $response = cUsuarios::ActualizarCliente($_SESSION["idUsuario"], $_SESSION["identificacion"], $_SESSION["nombre"], $_SESSION["apellidos"], $_POST["datos"]["correoPerfil"], $_POST["datos"]["telefonoPerfil"], $_POST["datos"]["nacionalidadPerfil"], $_POST["datos"]["generoPerfil"]);
             echo json_encode($response);
             break;
 
